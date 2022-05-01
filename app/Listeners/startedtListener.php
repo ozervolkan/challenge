@@ -27,10 +27,13 @@ class startedtListener
      */
     public function handle(Started $event)
     {
-        $response = Http::post($event->endpoint->url, [
+        $client = new \GuzzleHttp\Client();
+        $params = [
             'appId' => $event->device->appId,
             'deviceId' => $event->device->uid,
             'event' => 'started',
-        ]);
+        ];
+
+        $request = $client->post($event->endpoint->url, ['form_params'=> $params]);
     }
 }

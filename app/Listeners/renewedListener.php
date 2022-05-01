@@ -27,10 +27,12 @@ class renewedListener
      */
     public function handle(Renewed $event)
     {
-        $response = Http::post($event->endpoint->url, [
+        $client = new \GuzzleHttp\Client();
+
+        $request = $client->post($event->endpoint->url, ['form_params'=> [
             'appId' => $event->device->appId,
             'deviceId' => $event->device->uid,
             'event' => 'renewed',
-        ]);
+        ]]);
     }
 }
