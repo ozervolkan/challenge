@@ -18,15 +18,6 @@ RUN pecl install -o -f redis \
     &&  rm -rf /tmp/pear \
     &&  docker-php-ext-enable redis
 
-
-#Install Cron
-RUN apt-get update
-RUN apt-get -y install cron
-
-
-# Run the command on container startup
-CMD cron && tail -f /var/log/cron.log
-
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www
