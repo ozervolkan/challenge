@@ -52,7 +52,7 @@ Veritabanı Bilgileri
 |--|--|--|
 |POST|api/v1/register| Cihaz kayıt olma işlemi |
 |POST|api/v1/purchase| Satın alma isteği |
-|POST|api/v1/check| Güncel abonelik durumunu döndürür |
+|GET|api/v1/check| Güncel abonelik durumunu döndürür |
 
 ---
 
