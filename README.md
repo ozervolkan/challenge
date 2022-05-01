@@ -10,7 +10,7 @@ Docker-compose up
 
 Dockerda kurulumdan sonra Container içerisinde terminalden : 
 
-Bağımlıklar kurulur :
+Bağımlılıklar kurulur :
 
 ```bash
 composer update
