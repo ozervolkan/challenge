@@ -5,7 +5,7 @@
 - Proje indirilir. Bir klasörde dockera yüklenir.
 
 ```bash
-Docker-compose up
+docker-compose up
 ```
 
 Dockerda kurulumdan sonra Container içerisinde terminalden : 
