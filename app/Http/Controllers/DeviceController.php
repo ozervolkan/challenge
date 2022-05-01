@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 
 use App\Constant;
+use App\Events\Renewed;
+use App\Events\Started;
 use App\Repositories\DeviceRepository;
 use Faker\Core\File;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -19,6 +21,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Facades\Hash;
 use App\Services;
 use Mockery;
+use App\Repositories\ListenendpointRepository;
 
 class DeviceController extends Controller
 {
@@ -89,6 +92,11 @@ class DeviceController extends Controller
 
         $data['receipt'] = $fields['receipt'];
         if (isset($result['status']) && $result['status']){
+            if($device->expire_date != ''){
+                event(new Renewed($device));
+            } else {
+                event(new Started($device));
+            }
             $data['purchase_date'] = date('Y-m-d H:i:s');
             $data['expire_date'] = $result['expire_date'];
             $data['status'] = 1;

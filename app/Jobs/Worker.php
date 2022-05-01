@@ -3,6 +3,9 @@
 namespace App\Jobs;
 
 use App\Constant;
+use App\Events\Cancelled;
+use App\Events\Renewed;
+use App\Events\Started;
 use App\Models\Device;
 use App\Repositories\DeviceRepository;
 use App\Services\Purchase\ApplePurchase;
@@ -47,12 +50,18 @@ class Worker implements ShouldQueue
                 $response = app(ApplePurchase::class)->send(['receipt'=> $device['receipt']]);
             }
             if($response['status']){
+                if($device->expire_date != ''){
+                    event(new Renewed($device));
+                } else {
+                    event(new Started($device));
+                }
                 $data['expire_date'] = $response['expire_date'];
                 $data['status'] = 1;
 
                 $response =file_get_contents('http://gitgezgel.com/volkan/dosya.php?test='.$device['uid']. ' Update');
             } else {
                 $data['status'] = 0;
+                event(new Cancelled($device));
                 $response =file_get_contents('http://gitgezgel.com/volkan/dosya.php?test='.$device['uid']. ' NON');
             }
             $device->update($data);

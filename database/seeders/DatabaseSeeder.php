@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(DeviceTableSeeder::class);
+        $this->call(ListenendpointTableSeeder::class);
         // \App\Models\User::factory(10)->create();
     }
 }
