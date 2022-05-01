@@ -48,11 +48,11 @@ Veritabanı Bilgileri
 
 ---
 
-| Method | Auth | EndPoint | Parameters | Description
-|--|--|--|--|
-|POST|Yok|api/v1/register| uid, appId, os, language | Cihaz kayıt olma işlemi, Client-Token alınır. |
-|POST|Bearer Token|api/v1/purchase| receipt | Satın alma isteği |
-|GET|Bearer Token|api/v1/check| Güncel abonelik durumunu döndürür |
+| Method | Auth | EndPoint | Parameters | Description |
+|--|--|--|--|--|
+|POST|Yok|api/v1/register|uid, appId, os, language|Cihaz kayıt olma işlemi, Client-Token alınır.|
+|POST|Bearer Token|api/v1/purchase|receipt|Satın alma isteği|
+|GET|Bearer Token|api/v1/check| |Güncel abonelik durumunu döndürür|
 
 ---
 
