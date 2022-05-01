@@ -28,6 +28,13 @@ dummy datalar tablolalara eklenir :
 php artisan db:seed
 ```
 
+Bu işlemlerden sonra aşağıdaki url den yayına geçecektir.
+
+```bash
+http://127.0.0.1:8000
+```
+
+
 ---
 
 Veritabanı Bilgileri
@@ -37,6 +44,7 @@ Veritabanı Bilgileri
 | Veritabanı|laravel |
 |Kullanıcı adı|root|
 |Şifre|root|
+|Port|3306|
 
 ---
 
