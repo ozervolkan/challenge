@@ -94,9 +94,9 @@ class DeviceController extends Controller
         $data['receipt'] = $fields['receipt'];
         if (isset($result['status']) && $result['status']){
             if($device->expire_date != ''){
-                //event(new Renewed($device));
+                event(new Renewed($device));
             } else {
-               // event(new Started($device));
+                event(new Started($device));
             }
             $data['purchase_date'] = date('Y-m-d H:i:s');
             $data['expire_date'] = $result['expire_date'];
