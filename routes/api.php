@@ -16,7 +16,6 @@ use App\Http\Controllers\DeviceController;
 
 Route::group(['prefix'=>'v1', 'namespace'=>'Api'], function (){
     //Koruma olmayan route lar
-    Route::get('/devices', [DeviceController::class, 'index']); //silinecek.
 
     Route::post('/register', [DeviceController::class, 'register']);
 
