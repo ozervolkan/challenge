@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DeviceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,5 @@ Route::get('worker', function() {
 
     return 'worker başladı.';
 });
+
+Route::get('/report',  [DeviceController::class, 'report']);

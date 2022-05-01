@@ -1,5 +1,5 @@
 FROM composer:latest AS composer
-FROM php:7.4.20-fpm
+FROM php:7.4-fpm
 
 RUN apt-get update && apt-get install -y \
     git \
@@ -18,13 +18,6 @@ RUN pecl install -o -f redis \
     &&  rm -rf /tmp/pear \
     &&  docker-php-ext-enable redis
 
-ADD /var/www/docker/crontab /etc/cron.d/hello-cron
-
-# Give execution rights on the cron job
-RUN chmod 0644 /etc/cron.d/hello-cron
-
-# Create the log file to be able to run tail
-RUN touch /var/log/cron.log
 
 #Install Cron
 RUN apt-get update

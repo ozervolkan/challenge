@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('uid');
             $table->string('appId');
             $table->string('os');
+            $table->string('language');
             $table->integer('status')->nullable();
             $table->dateTime('purchase_date')->nullable();
             $table->dateTime('expire_date')->nullable();

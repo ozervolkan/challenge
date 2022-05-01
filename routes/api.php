@@ -25,11 +25,6 @@ Route::group(['prefix'=>'v1', 'namespace'=>'Api'], function (){
         Route::post('/purchase', [DeviceController::class, 'purchase']);
         Route::get('/check', [DeviceController::class, 'checkSucscription']);
     });
-
-
-    Route::get('/register', function (){
-        return 'register';
-    });
 });
 
 

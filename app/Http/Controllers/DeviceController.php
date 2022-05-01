@@ -117,4 +117,13 @@ class DeviceController extends Controller
 
         return response($response, 200);
     }
+
+    public function report()
+    {
+        $report = $this->deviceRepository->getReporting();
+
+        return json_encode($report);
+    }
+
+
 }

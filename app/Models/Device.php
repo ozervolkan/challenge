@@ -15,6 +15,7 @@ class Device extends Model
         'uid',
         'appId',
         'os',
+        'language',
         'status',
         'expire_date',
         'purchase_date',
