@@ -90,7 +90,6 @@ class DeviceController extends Controller
             'status'=> 'error'
         ];
 
-        event(new Renewed($device));
 
         $data['receipt'] = $fields['receipt'];
         if (isset($result['status']) && $result['status']){
