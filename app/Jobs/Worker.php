@@ -58,14 +58,11 @@ class Worker implements ShouldQueue
                 $data['expire_date'] = $response['expire_date'];
                 $data['status'] = 1;
 
-                $response =file_get_contents('http://gitgezgel.com/volkan/dosya.php?test='.$device['uid']. ' Update');
             } else {
                 $data['status'] = 0;
                 event(new Cancelled($device));
-                $response =file_get_contents('http://gitgezgel.com/volkan/dosya.php?test='.$device['uid']. ' NON');
             }
             $device->update($data);
-            sleep(3);
         }
     }
 }
