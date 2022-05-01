@@ -8,35 +8,40 @@
 Docker-compose up
 ```
 
-Dockerda kurulumdan sonra Container içerisinden
+Dockerda kurulumdan sonra Container içerisinde terminalden : 
 
-Veritabanı Kurulumu
+Bağımlıklar kurulur :
+
+```bash
+composer update
+```
+
+Veritabanı tabloları kurulur : 
 
 ```bash
 php artisan migrate
 ```
 
-dummy datalar tablolalara eklenir:
+dummy datalar tablolalara eklenir :
 
 ```bash
 php artisan db:seed
 ```
 
-routes :
-api versiyon : 
-```bash
-/v1
-```
+---
 
-kayıt olma
-```bash
-/register
-```
+Veritabanı Bilgileri
 
-abonelik
-```bash
-/purchase
-```
+| Bilgi | Değer |
+|--|--|
+| Veritabanı|laravel |
+|Kullanıcı adı|root|
+|Şifre|root|
 
+---
 
-
+| Method | EndPoint | Description
+|--|--|--|
+|POST|api/v1/register| Cihaz kayıt olma işlemi |
+|POST|api/v1/purchase| Satın alma isteği |
+|POST|api/v1/check| Güncel abonelik durumunu döndürür |
