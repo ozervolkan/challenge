@@ -64,6 +64,11 @@ Worker aşağıdaki url den çalışacaktır. Cron veya Supervisord henüz eklen
 http://127.0.0.1:8000/worker
 ```
 
+Workerı çalıştırmak için terminalden aşağıdaki komut çalıştırılmalıdır: 
+
+```bash
+php artisan queue:work
+```
 ---
 
 Callback
