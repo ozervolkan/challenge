@@ -3,7 +3,10 @@
 ## Kurulum
 
 - Proje indirilir. 
+
+```bash
 .env.example dosyası .env olarak değiştirilir.
+```
 Bir klasöre çıkartılmış olan proje dockera yüklenir.
 
 ```bash
