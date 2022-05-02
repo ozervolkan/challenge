@@ -2,7 +2,9 @@
 
 ## Kurulum
 
-- Proje indirilir. Bir klasörde dockera yüklenir.
+- Proje indirilir. 
+.env.example dosyası .env olarak değiştirilir.
+Bir klasöre çıkartılmış olan proje dockera yüklenir.
 
 ```bash
 docker-compose up
@@ -26,6 +28,12 @@ dummy datalar tablolalara eklenir :
 
 ```bash
 php artisan db:seed
+```
+
+Proje için key üretilir:
+
+```bash
+php artisan key:generate
 ```
 
 Bu işlemlerden sonra aşağıdaki url den yayına geçecektir.
