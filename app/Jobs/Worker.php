@@ -57,23 +57,9 @@ class Worker implements ShouldQueue
                 }
                 $data['expire_date'] = $response['expire_date'];
                 $data['status'] = 1;
-                
-                
-                
-                
-                $response = Http::post('http://gitgezgel.com/volkan/dosya.php', [
-                    'appId' => $device->appId,
-                    'deviceId' => $device->uid,
-                    'event' => 'Yenilendi',
-                ]);
 
             } else {
                 $data['status'] = 0;
-                $response = Http::post('http://gitgezgel.com/volkan/dosya.php', [
-                    'appId' => $device->appId,
-                    'deviceId' => $device->uid,
-                    'event' => 'IPTAL',
-                ]);
                 event(new Cancelled($device));
             }
             $device->update($data);
